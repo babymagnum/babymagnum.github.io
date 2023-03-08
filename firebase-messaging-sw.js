@@ -26,3 +26,17 @@ importScripts('https://www.gstatic.com/firebasejs/8.4.1/firebase-messaging.js');
     self.registration.showNotification(notificationTitle,
       notificationOptions);
   });
+
+  // Notification click event listener
+  self.addEventListener('notificationclick', e => {
+    data=e.notification.data.obj;
+    // Close the notification popout
+    e.notification.close();
+    // Get all the Window clients
+    e.waitUntil(clients.matchAll({ type: 'window' }).then(clientsArr => {
+      // If a Window tab matching the targeted URL already exists, focus that;
+      const hadWindowToFocus = clientsArr.some(windowClient => windowClient.url === e.notification.data.click_action ? (windowClient.focus(), true) : false);
+      // Otherwise, open a new tab to the applicable URL and focus it.
+      if (!hadWindowToFocus) clients.openWindow(e.notification.data.click_action).then(windowClient => windowClient ? windowClient.focus() : null);
+    }));
+  });
