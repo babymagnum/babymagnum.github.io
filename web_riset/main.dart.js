@@ -38780,7 +38780,7 @@ m=(n==null?$.k3=$.E9():n).oW("[DEFAULT]")
 n=$.v4()
 A.kw(m,n,!0)
 s=2
-return A.I(A.aiz(new A.j0(m)).gxV().ks(null),$async$r6)
+return A.I(A.aiz(new A.j0(m)).gxV().ks("BMAMWBnSbJIkloEB0_lWO9SCEMm1VUm87R9EJL4PT66xRabCCAKGZ-zkvo5hM_5R0kpqxkUNikpni4kjV5bLiS8"),$async$r6)
 case 2:p=b
 q.ch.$1(p)
 o=$.k3
@@ -39977,8 +39977,8 @@ $1(a){var s=A.ajf(A.aG7(a))
 $.ahJ().C(0,s)},
 $S:158}
 A.Y2.prototype={
-$0(){var s=this.a.gGs()
-return A.akv(firebase_messaging.getToken(s.a,null),t.N)},
+$0(){var s=this.a.gGs(),r={vapidKey:this.b}
+return A.akv(firebase_messaging.getToken(s.a,r),t.N)},
 $S:159}
 A.Y3.prototype={
 $0(){var s=0,r=A.F(t.Z_),q,p,o
