@@ -34,30 +34,14 @@
 
   <script>
     // The value below is injected by flutter build, do not touch.
-    var serviceWorkerVersion = '3781661202';
+    var serviceWorkerVersion = '1161799477';
   </script>
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
-  <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-messaging.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-messaging.js"></script>
 </head>
 <body>
-  <script>
-    if ("serviceWorker" in navigator) {
-        const baseRegister = navigator.serviceWorker.register;
-        navigator.serviceWorker.register = function (url, options) {
-          if (url.startsWith('/') && url.indexOf('/', 1) === -1) {
-            url = url.substring(1);
-          }
-
-          if (options && options.scope && options.scope.startsWith('/') && options.scope.indexOf('/', 1) === -1) {
-            options.scope = options.scope.substring(1);
-          }
-
-          return baseRegister.call(navigator.serviceWorker, url, options);
-        };
-    }
-  </script>
   <script>
     const firebaseConfig = {
       apiKey: "AIzaSyAQqhCmWjKZGkKvZ2Xhf1KmHaneB9o4unc",
